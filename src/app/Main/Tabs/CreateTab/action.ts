@@ -7,7 +7,7 @@ import { SpotifyApi } from "@spotify/web-api-ts-sdk"
 import { revalidatePath } from "next/cache"
 import { schema } from "./schema"
 
-export async function createTab(formData: FormData) {
+export async function createTab(formData: FormData, groupId: string) {
 	const supabase = createClient()
 	const {
 		data: { user },
@@ -42,6 +42,7 @@ export async function createTab(formData: FormData) {
 			title: track.name,
 			artist: track.artists.map((artist) => artist.name).join(", "),
 			album_cover: track.album.images[0].url,
+			group_id: groupId === "None" ? null : Number.parseInt(groupId),
 		})
 
 		if (res.error) return false

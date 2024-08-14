@@ -26,7 +26,7 @@ export async function Entries({ user }: { user: User }) {
 				<div className="flex flex-row items-center gap-2">
 					{entries && entries.length > 0 && <EditEntries />}
 					<CreateGroup />
-					<CreateTab />
+					<CreateTab groups={groups} />
 				</div>
 			</div>
 			{entries && entries.length > 0 && groups && (

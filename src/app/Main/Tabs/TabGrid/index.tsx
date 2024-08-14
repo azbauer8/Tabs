@@ -14,7 +14,7 @@ export function TabGrid({
 		<>
 			{Object.entries(groupedEntries).map(([groupKey, group], index) => (
 				<Fragment key={groupKey}>
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col gap-5">
 						{groupKey && (
 							<div className="flex items-center justify-between">
 								<Heading size="5">{group.groupName}</Heading>
