@@ -1,6 +1,6 @@
-import { LandingPage } from "@/app/(landing)/LandingPage"
-import { MainLayout } from "@/app/(main)/MainLayout"
 import { createClient } from "@/utils/supabase/server"
+import { LandingPage } from "./Landing/LandingPage"
+import { MainLayout } from "./Main/MainLayout"
 
 export default async function Home() {
 	const supabase = createClient()

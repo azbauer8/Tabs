@@ -1,6 +1,6 @@
-import { SignInButton } from "@/app/(landing)/SignInButton"
 import { signIn } from "@/utils/auth"
 import { Heading, Text } from "@radix-ui/themes"
+import { SignInButton } from "./SignInButton"
 
 export function LandingPage() {
 	return (

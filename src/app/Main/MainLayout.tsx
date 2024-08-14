@@ -1,6 +1,6 @@
-import { Navbar } from "@/app/(main)/Navbar"
 import type { User } from "@supabase/supabase-js"
-import { Entries } from "./Entries"
+import { Navbar } from "./Navbar"
+import { Entries } from "./Tabs"
 
 export function MainLayout({ user }: { user: User }) {
 	return (

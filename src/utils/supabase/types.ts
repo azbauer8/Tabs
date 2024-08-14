@@ -63,17 +63,17 @@ export type Database = {
 			"Entry Groups": {
 				Row: {
 					id: number
-					title: string | null
+					title: string
 					user_id: string
 				}
 				Insert: {
 					id?: number
-					title?: string | null
+					title: string
 					user_id?: string
 				}
 				Update: {
 					id?: number
-					title?: string | null
+					title?: string
 					user_id?: string
 				}
 				Relationships: [

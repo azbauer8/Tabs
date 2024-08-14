@@ -7,7 +7,7 @@ import { SpotifyApi } from "@spotify/web-api-ts-sdk"
 import { revalidatePath } from "next/cache"
 import { schema } from "./schema"
 
-export async function createEntry(formData: FormData) {
+export async function createTab(formData: FormData) {
 	const supabase = createClient()
 	const {
 		data: { user },

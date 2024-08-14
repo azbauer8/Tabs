@@ -21,7 +21,7 @@ export function EditEntries() {
 	return (
 		<Button variant="soft" color="gray" onClick={() => setEditMode(true)}>
 			<Pencil2Icon />
-			Edit Entries
+			Edit Tabs
 		</Button>
 	)
 }

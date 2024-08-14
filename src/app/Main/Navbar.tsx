@@ -4,6 +4,7 @@ import { signOut } from "@/utils/auth"
 import { getInitials } from "@/utils/general"
 import { Avatar, DropdownMenu, Text } from "@radix-ui/themes"
 import type { User } from "@supabase/supabase-js"
+import { useFormStatus } from "react-dom"
 
 export function Navbar({ user }: { user: User }) {
 	return (
@@ -22,12 +23,20 @@ export function Navbar({ user }: { user: User }) {
 				<DropdownMenu.Content>
 					<DropdownMenu.Label>{user.user_metadata.name}</DropdownMenu.Label>
 					<form action={signOut}>
-						<DropdownMenu.Item asChild className="w-full">
-							<button type="submit">Sign Out</button>
-						</DropdownMenu.Item>
+						<SignOutButton />
 					</form>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		</nav>
+	)
+}
+
+function SignOutButton() {
+	const { pending } = useFormStatus()
+
+	return (
+		<DropdownMenu.Item asChild className="w-full">
+			<button type="submit">{pending ? "Signing Out..." : "Sign Out"}</button>
+		</DropdownMenu.Item>
 	)
 }
